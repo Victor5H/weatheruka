@@ -9,7 +9,7 @@ import 'package:weatheureka/utilities/Weather_card.dart';
 class Full_Weather extends StatefulWidget {
   Full_Weather({required this.list, required this.cityName});
 
-  List<Full_Data> list;
+  List<FullData> list;
   String cityName;
 
   @override
@@ -17,7 +17,7 @@ class Full_Weather extends StatefulWidget {
 }
 
 class _Full_WeatherState extends State<Full_Weather> {
-  List<Full_Data> list=[];
+  List<FullData> list=[];
   String cityName="";
 
   @override

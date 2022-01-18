@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:location/location.dart';
+import 'package:permission_handler/permission_handler.dart' as P;
 import 'package:weatheureka/services/Full_Weather_Model.dart';
 import 'package:weatheureka/services/weather.dart';
 import 'full_weather.dart';
@@ -13,12 +13,15 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
+
+
   @override
   void initState() {
     super.initState();
     //getLocationData();
     getAll();
   }
+
   void getAll() async{
     FullWeatherModel fullWeatherModel = FullWeatherModel();
     var list= await fullWeatherModel.getFullWeatherData(8);

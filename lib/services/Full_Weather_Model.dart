@@ -71,9 +71,9 @@ class FullWeatherModel{
     }
     else return cityName;
   }
-  Future<List<Full_Data>> getCityWeatherData(String name,int max) async{
-    List<Full_Data> list= [];
-    Location loc = Location();
+  Future<List<FullData>> getCityWeatherData(String name,int max) async{
+    List<FullData> list= [];
+    LocationHelper loc = LocationHelper();
     await loc.getCurrentLocation();
     NetworkHelper networkHelper = NetworkHelper(
         url:
@@ -95,7 +95,7 @@ class FullWeatherModel{
       if (date == now1)
         date = 'Today';
       time = t.format(dt);
-      list.add(new Full_Data(minTemp: minTemp,
+      list.add(new FullData(minTemp: minTemp,
           maxTemp: maxTemp,
           date: date,
           time: time,
@@ -106,9 +106,9 @@ class FullWeatherModel{
     return list;
   }
 
-  Future<List<Full_Data>> getFullWeatherData(int max) async{
-    List<Full_Data> list= [];
-    Location loc = Location();
+  Future<List<FullData>> getFullWeatherData(int max) async{
+    List<FullData> list= [];
+    LocationHelper loc = LocationHelper();
     await loc.getCurrentLocation();
     NetworkHelper networkHelper = NetworkHelper(
         url:
@@ -128,7 +128,7 @@ class FullWeatherModel{
       date=d.format(dt);
       if(date==now1) date='Today';
       time=t.format(dt);
-      list.add(new Full_Data(minTemp:minTemp, maxTemp:maxTemp,date: date,time: time,
+      list.add(new FullData(minTemp:minTemp, maxTemp:maxTemp,date: date,time: time,
           humidity: humidity,imgURL: icon,weatherCode: getBackImg(weatherCode).toString()));
     }
 
