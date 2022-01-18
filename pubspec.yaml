@@ -22,10 +22,17 @@ dependencies:
   intl: ^0.17.0
   google_fonts: ^2.0.0
   permission_handler: ^8.0.0+2
+  flutter_launcher_icons: "^0.9.0"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  image_path: "icons/ic_launcher.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
 
 
 flutter:
